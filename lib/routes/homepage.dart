@@ -24,7 +24,7 @@ class _HomepageState extends State<Homepage> {
         body: Center(
           child: Text(
             'Plant Disease Identifier',
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 40, color: Colors.brown, fontFamily: 'Raleway'),
+            style: plantAppStyleBig,
             textAlign: TextAlign.center,
           ),
         ),
@@ -46,11 +46,7 @@ class _HomepageState extends State<Homepage> {
                 color: Colors.white,
               ),
               label: "Gallery",
-              labelStyle: TextStyle(
-                color: Colors.brown,
-                fontWeight:FontWeight.bold,
-                fontSize: 20,
-              ),
+              labelStyle: plantAppStylemMed,
               backgroundColor: Colors.lightGreen,
               labelBackgroundColor: Colors.transparent,
 
@@ -61,11 +57,7 @@ class _HomepageState extends State<Homepage> {
                 color: Colors.white,
               ),
               label: "Camera",
-              labelStyle: TextStyle(
-                color: Colors.brown,
-                fontWeight:FontWeight.bold,
-                fontSize: 20,
-              ),
+              labelStyle: plantAppStylemMed,
               backgroundColor: Colors.lightGreen,
               labelBackgroundColor: Colors.transparent,
 

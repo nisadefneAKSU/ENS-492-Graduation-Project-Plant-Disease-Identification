@@ -1,12 +1,14 @@
-/*import 'package:flutter/cupertino.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:plantdisease/utils/colors.dart';
 
-final plantAppStyleBig = GoogleFonts.dancingScript(
+final plantAppStyleBig = TextStyle(
+  fontFamily: 'Pacifico',
   fontSize: 64,
+  fontWeight: FontWeight.bold,
   color: AppColors.plantAppColor,
 );
-final plantAppStylemMed = GoogleFonts.dancingScript(
-  fontSize: 32,
+final plantAppStylemMed = TextStyle(
+  fontFamily: 'Pacifico',
+  fontSize: 28,
   color: AppColors.plantAppColor,
-);*/
+);
