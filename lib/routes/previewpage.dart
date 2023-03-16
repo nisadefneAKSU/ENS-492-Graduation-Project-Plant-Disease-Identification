@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:plantdisease/utils/styles.dart';
@@ -15,7 +16,7 @@ class _PreviewpageState extends State<Previewpage> {
   bool? isDone = false;
 
   @override
-  void initState() {
+  /*void initState() {
     // TODO: implement initState
     super.initState();
     _loadPage();
@@ -31,7 +32,7 @@ class _PreviewpageState extends State<Previewpage> {
     {
       Navigator.pushNamed(context, '/homepage');
     }
-  }
+  }*/
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
@@ -57,105 +58,95 @@ List<Widget> dotWidgetFunction(int currentPage)
 }
 Widget firstPage()
 {
-  return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const SizedBox(height: 10,),
-        Column(
-          children: [
-            Center(
-              child: Text(
-                "Welcome to",
-                style: gettingStartedStyleBold,
+  return Container(
+    decoration: const BoxDecoration(
+      image: DecorationImage(image: NetworkImage('https://i.pinimg.com/564x/df/d2/55/dfd255d408ee93c7b06de75696452cc0.jpg'),
+        fit: BoxFit.cover,
+      ),
+    ),
+    child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 10,),
+          Column(
+            children: [
+              Center(
+                child: Text(
+                  "Welcome to",
+                  style: TextStyle(color: Colors.lightGreen[800], fontSize: 30,),
+                ),
               ),
-            ),
-            Center(
-              child: Text(
-                "Disease Identifier",
-                style: plantAppStyleBig,
+              Center(
+                child: Text(
+                  "Disease Identifier",
+                  style: plantAppStyleBig,
+                ),
               ),
-            ),
-          ],
-        ),
-        Text(
-          "An app for Plant Disease Identification",
-          style: gettingStartedExplanation,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: dotWidgetFunction(1),
-        ),
-        const SizedBox(height: 40,)
+            ],
+          ),
+          Text(
+            "With this application, you have the opportunity to detect the diseases of your plants.",
+            style: TextStyle(color: Colors.lightGreen[800], fontSize: 16, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: dotWidgetFunction(1),
+          ),
+          const SizedBox(height: 40,)
 
-      ]
+        ]
+    ),
   );
 }
 Widget secondPage()
 {
-  return Padding(
-    padding: Dimen.onStartingMarginInsets,
-    child: Column(
-      children: [
-        const Spacer(),
-        RichText(
-            text: TextSpan(
-                text: "In ",
-                style: gettingStartedStyle,
-                children: <TextSpan>[
-                  TextSpan(
-                    text: "Disease Identifier ",
-                    style: plantAppStylemMed,
-                  ),
-                  TextSpan(
-                    text: " you can",
-                    style: gettingStartedStyle,
-                  )
-                ]
-            )
-        ),
-        const Spacer(),
-        Row(
-          children: [
-            const Icon(Icons.add_box_outlined),
-            Text(
-              "find disease",
-              style: gettingStartedExplanation,
-            )
-          ],
-        ),
-        const Divider(thickness: 2,),
-        Row(
-          children: [
-            const Padding(
-              padding: EdgeInsets.fromLTRB(5, 0, 7, 0),
-              child: Text(
-                "#",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: Colors.indigo,
+  return Container(
+    decoration: const BoxDecoration(
+      image: DecorationImage(image: NetworkImage('https://i.pinimg.com/564x/a0/7e/bd/a07ebd32b489dcf01905f35d0f73b306.jpg'),
+        fit: BoxFit.cover,
+      ),
+    ),
+    child: Padding(
+      padding: EdgeInsets.fromLTRB(24.0, 270.0, 24.0, 24.0),
+      child: Column(
+        children: [
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Icon(Icons.search),
+              Text(
+                "find disease",
+                style: TextStyle(color: Color(0xF579063B), fontSize: 26),
+              )
+            ],
+          ),
+          const Divider(thickness: 4,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Padding(
+                padding: EdgeInsets.fromLTRB(5, 0, 7, 0),
+                child: Text(
+                  "get info about disease",
+                  style: TextStyle(color: Color(0xFF558B2F), fontSize: 26),
+
                 ),
-
               ),
-            ),
-            Text(
-              "info about disease"
-                  ""
-                  "",
-              style: gettingStartedExplanation,
-            )
-          ],
-        ),
+            ],
+          ),
 
 
-        const Spacer(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: dotWidgetFunction(2),
-        ),
-        const SizedBox(height: 135),
-      ],
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: dotWidgetFunction(2),
+          ),
+          const SizedBox(height: 135),
+        ],
+      ),
     ),
   );
 }
@@ -167,90 +158,81 @@ makeSeen() async{
 }
 Widget thirdPage(BuildContext context, PageController pc)
 {
-  return Column(
-      children: [
-        const SizedBox(height: 100),
-        Padding(
-          padding: Dimen.onStartingMarginInsets,
-          child: Text(
-            "Disease Identifier",
-            style: plantAppStyleBig,
+  return Container(
+    decoration: const BoxDecoration(
+      image: DecorationImage(image: NetworkImage('https://i.pinimg.com/564x/69/c1/ed/69c1ed31bb46b7f66fb2f9876cf922a0.jpg'),
+        fit: BoxFit.cover,
+      ),
+    ),
+    child: Column(
+        children: [
+          const SizedBox(height: 100),
+          Padding(
+            padding: EdgeInsets.all(24.0),
+            child: Text(
+              "Disease Identifier",
+              style: plantAppStyleBig,
+            ),
           ),
-        ),
-        Text(
-            "You are ready.",
-            style: gettingStartedStyle
-        ),
 
-        Padding(
-            padding: Dimen.onStartingMarginInsets,
-            child: Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.indigo,
-                      ),
 
-                      onPressed: ()
-                      {
-                        makeSeen();
-                        Navigator.pushNamed(context, '/homepage');
-                      },
-                      icon: const Icon(Icons.emoji_flags),
-                      label: const Text("Finish tutorial")
-                  ),
+          Padding(
+              padding: EdgeInsets.all(24.0),
+              child:
+              SizedBox(width: 50.0,),
+
+          ),
+          Center(
+            child: ElevatedButton.icon(
+
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xF579063B),
+                  fixedSize: const Size(100, 100),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50)),
                 ),
-                const SizedBox(width: 8.0,),
-                Expanded(
-                  child: ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.indigo,
-                      ),
 
-                      onPressed: ()
-                      {
-                        pc.previousPage(duration: const Duration(seconds: 1), curve: Curves.easeInOut);
-                      },
-                      icon: const Icon(Icons.arrow_back_ios),
-                      label: const Text("Previous page")
-                  ),
-                )
-              ],
-            )
-        ),
-        Center(
-          child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.indigo,
-              ),
-
-              onPressed: ()
-              {
-                pc.animateToPage(
-                  0,
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeInOut,
-                );
-              },
-              icon: const Icon(Icons.restart_alt),
-              label: const Text("Restart tutorial")
+                onPressed: ()
+                {
+                  pc.animateToPage(
+                    0,
+                    duration: const Duration(milliseconds: 400),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                icon: const Icon(Icons.restart_alt),
+                label: const Text("First Page")
+            ),
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.all(18.0),
+          ),
+          Center(
+            child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xFF558B2F),
+                  fixedSize: const Size(120, 50),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                ),
 
-        const Spacer(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: dotWidgetFunction(5),
-        ),
-        const SizedBox(height: 160)
-      ]
+                onPressed: ()
+                {
+                  makeSeen();
+                  Navigator.pushNamed(context, '/homepage');
+                },
+                icon: const Icon(Icons.check),
+                label: const Text("Finish")
+            ),
+          ),
+
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: dotWidgetFunction(3),
+          ),
+          const SizedBox(height: 160)
+        ]
+    ),
   );
-}
-class Dimen{
-  static const double onStartingMargin = 24.0;
-  static get onStartingMarginInsets => const EdgeInsets.all(onStartingMargin);
-
-
-
 }

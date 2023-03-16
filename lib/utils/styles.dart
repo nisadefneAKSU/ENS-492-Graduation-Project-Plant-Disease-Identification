@@ -14,7 +14,6 @@ final plantAppStylemMed = TextStyle(
 );
 final gettingStartedStyleBold = TextStyle(
   fontSize: 32,
-  fontWeight: FontWeight.bold,
   color: AppColors.onStartingTitle,
 );
 final gettingStartedStyle = TextStyle(

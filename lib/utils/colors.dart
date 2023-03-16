@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class AppColors{
   // On starting colors
 
-  static const onStartingTitle = Colors.black;
+  static const onStartingTitle = Colors.lightGreen;
   static const plantAppColor = Colors.brown;
   static const explanationColor = Color(0XFF502795);
   static const warningColor = Color(0xFFC91306);
-  static const activeDots = Colors.green;
-  static const passiveDots = Color(0xFF656565);
+  static const activeDots = Color(0xFF558B2F);
+  static const passiveDots = Colors.brown;
 
 }
