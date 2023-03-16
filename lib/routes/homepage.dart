@@ -1,7 +1,12 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:plantdisease/utils/styles.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart';
 
 
 class Homepage extends StatefulWidget {
@@ -12,6 +17,33 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  File? _image;
+  
+  Future getImage(ImageSource source) async {
+    try {
+      final image = await ImagePicker().pickImage(source: source);
+      if (image == null) return;
+
+      //final imageTemporary = File(image.path);
+      final imagePermanent = await saveFilePermanently(image.path);
+
+
+      setState(() {
+        this._image = imagePermanent;
+      });
+    }on PlatformException catch (e) {
+      print('Failed to pick image: $e');
+    }
+  }
+
+  Future<File> saveFilePermanently(String imagePath) async {
+    final directory = await getApplicationDocumentsDirectory();
+    final name = basename(imagePath);
+    final image = File('${directory.path}/$name');
+
+    return File(imagePath).copy(image.path);
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,10 +72,12 @@ class _HomepageState extends State<Homepage> {
           childrenButtonSize: const Size.fromRadius(40),
           spaceBetweenChildren: 20,
           children: [
+            //_image != null ? Image.file(_image!) :
             SpeedDialChild(
-              child: const FaIcon(
-                FontAwesomeIcons.image,
+              child: IconButton(
+                icon: Icon(Icons.image_outlined),
                 color: Colors.white,
+                onPressed: () => getImage(ImageSource.gallery ),
               ),
               label: "Gallery",
               labelStyle: plantAppStylemMed,
@@ -52,9 +86,10 @@ class _HomepageState extends State<Homepage> {
 
             ),
             SpeedDialChild(
-              child: const FaIcon(
-                FontAwesomeIcons.camera,
+              child: IconButton(
+                icon: Icon(Icons.camera_alt),
                 color: Colors.white,
+                onPressed: () => getImage(ImageSource.camera),
               ),
               label: "Camera",
               labelStyle: plantAppStylemMed,
@@ -67,3 +102,4 @@ class _HomepageState extends State<Homepage> {
       ),
     );
   }}
+
