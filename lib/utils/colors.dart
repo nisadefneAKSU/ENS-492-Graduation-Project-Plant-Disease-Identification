@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class AppColors{
   // On starting colors
 
-  static const onStartingTitle = Colors.lightGreen;
   static const plantAppColor = Colors.brown;
   static const explanationColor = Color(0XFF502795);
   static const warningColor = Color(0xFFC91306);
