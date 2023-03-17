@@ -54,10 +54,13 @@ class _HomepageState extends State<Homepage> {
       ),
       child: Scaffold(
         body: Center(
-          child: Text(
-            'Plant Disease Identifier',
-            style: plantAppStyleBig,
-            textAlign: TextAlign.center,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 250),
+            child: Text(
+              'Plant Disease Identifier',
+              style: plantAppStyleBig,
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
         backgroundColor: Colors.transparent,
