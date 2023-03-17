@@ -109,7 +109,7 @@ Widget secondPage()
       ),
     ),
     child: Padding(
-      padding: EdgeInsets.fromLTRB(24.0, 270.0, 24.0, 24.0),
+      padding: EdgeInsets.fromLTRB(24.0, 285.0, 24.0, 24.0),
       child: Column(
         children: [
           const Spacer(),
@@ -119,7 +119,7 @@ Widget secondPage()
               const Icon(Icons.search),
               Text(
                 "find disease",
-                style: TextStyle(color: Color(0xF579063B), fontSize: 26),
+                style: TextStyle(color: Color(0xF579063B), fontSize: 24, fontWeight: FontWeight.bold),
               )
             ],
           ),
@@ -127,14 +127,33 @@ Widget secondPage()
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const Padding(
-                padding: EdgeInsets.fromLTRB(5, 0, 7, 0),
-                child: Text(
-                  "get info about disease",
-                  style: TextStyle(color: Color(0xFF558B2F), fontSize: 26),
-
-                ),
-              ),
+              const Icon(Icons.info_outline),
+              Text(
+                "get info about disease",
+                style: TextStyle(color: Color(0xFF558B2F), fontSize: 24, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
+          const Divider(thickness: 4,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Icon(Icons.image_outlined),
+              Text(
+                "image from gallery",
+                style: TextStyle(color: Color(0xFF558B2F), fontSize: 24, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
+          const Divider(thickness: 4,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Icon(Icons.camera_alt_outlined),
+              Text(
+                "or take a photo",
+                style: TextStyle(color: Color(0xF579063B), fontSize: 24, fontWeight: FontWeight.bold),
+              )
             ],
           ),
 
