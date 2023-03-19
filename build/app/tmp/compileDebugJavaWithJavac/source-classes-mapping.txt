@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/suis/plant_disease_detector/plant_disease_detector/BuildConfig.java
+ com.suis.plant_disease_detector.plant_disease_detector.BuildConfig

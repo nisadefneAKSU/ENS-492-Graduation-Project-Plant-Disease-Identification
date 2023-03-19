@@ -1,0 +1,1 @@
+/Users/yapikrediteknolojia.s./Desktop/plant_disease_detector/android/app/src/main/kotlin/com/suis/plant_disease_detector/plant_disease_detector/MainActivity.kt
